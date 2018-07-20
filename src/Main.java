@@ -29,7 +29,6 @@ public class Main implements Observer {
     @Override
     public void update(Thread thread) {
         if (thread.getClass() == Producer.class) {
-            System.out.println("main customer = " + customer.getId());
             synchronized (customer) {
                 customer.notify();
             }
